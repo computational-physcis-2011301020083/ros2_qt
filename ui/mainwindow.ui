@@ -93,7 +93,7 @@
   </action>
   <action name="actionAbout_Qt">
    <property name="text">
-    <string>About Qt</string>
+    <string>aboutQt</string>
    </property>
   </action>
  </widget>

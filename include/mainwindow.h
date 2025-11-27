@@ -11,6 +11,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "./ui_mainwindow.h"
 #include "rclcomm.h"
 #include <iostream>
 
@@ -68,8 +69,11 @@ public slots:
     void updateTopicInfo(QString);
     void updateStatusBar(const std::string& data);
     void updateImage(const QImage& image);
-    void on_actionAbout_triggered();
+    //void on_actionAbout_triggered();
     void setupCameraPosition();
     void setupSceneLighting();
+private slots:
+    void on_actionAbout_Qt_triggered();
+    void initializeRviz();
 };
 #endif // MAINWINDOW_H

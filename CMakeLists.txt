@@ -26,6 +26,7 @@ find_package(image_transport REQUIRED)
 find_package(rviz2 REQUIRED)
 find_package(rviz_common REQUIRED)
 find_package(rviz_default_plugins REQUIRED)
+find_package(rviz_rendering REQUIRED)
 find_package(rviz_ogre_vendor REQUIRED)
 find_package(OpenCV REQUIRED)
 # Note that ament_target_dependencies() in algo cannot export Boost::thread to downstream. As a result, qt_example_node, as a downstream of libalgo.so, needs to explicitly find_package() for Boost again so that qt_example_node is able to link to Boost::thread.
@@ -58,6 +59,9 @@ ament_target_dependencies(${PROJECT_NAME} rclcpp  Boost std_msgs sensor_msgs cv_
 
 target_link_libraries(${PROJECT_NAME}
         Qt5::Widgets
+        rviz_common::rviz_common
+    	rviz_default_plugins::rviz_default_plugins
+    	rviz_rendering::rviz_rendering
 )
 
 install(TARGETS ${PROJECT_NAME}
